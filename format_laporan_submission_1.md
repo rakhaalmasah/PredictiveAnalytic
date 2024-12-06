@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - [Nama Anda]
+# Laporan Proyek Machine Learning - [Muhammad Rakha Almasah]
 
 ## Domain Proyek
 
@@ -10,8 +10,13 @@ Prediksi indeks saham adalah salah satu aplikasi machine learning yang dapat mem
 ### **Referensi**
 - [News-Based Intelligent Prediction of Financial Markets Using Text Mining and Machine Learning: A Systematic Literature Review](https://scholar.google.com/scholar?hl=id&as_sdt=0%2C5&q=News-Based+Intelligent+Prediction+of+Financial+Markets+Using+Text+Mining+and+Machine+Learning%3A+A+Systematic+Literature+Review&btnG=)
 
----
+- [Predicting the Daily Return Direction of the Stock Market Using Hybrid Machine Learning Algorithms](https://scholar.google.com/scholar?hl=id&as_sdt=0%2C5&q=Predicting+the+Daily+Return+Direction+of+the+Stock+Market+Using+Hybrid+Machine+Learning+Algorithms+&btnG=)
+  
+- [Machine learning for financial forecasting, planning and analysis](https://link.springer.com/article/10.1007/s42521-021-00046-2)
 
+- [Unveiling the Influence of Artificial Intelligence and Machine Learning on Financial Markets: A Comprehensive Analysis of AI Applications in Trading, Risk Management, and Financial Operations](https://www.mdpi.com/1911-8074/16/10/434)
+
+  
 ## Business Understanding
 
 ### **Problem Statements**
