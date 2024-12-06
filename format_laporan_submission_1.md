@@ -8,7 +8,7 @@ Pasar saham merupakan salah satu indikator penting dari kesehatan ekonomi suatu 
 Prediksi indeks saham adalah salah satu aplikasi machine learning yang dapat memberikan insight bagi para investor dan analis keuangan untuk memahami pola pasar.
 
 ### **Referensi**
-- [Financial Market Analysis Using Machine Learning](https://scholar.google.com/)
+- [News-Based Intelligent Prediction of Financial Markets Using Text Mining and Machine Learning: A Systematic Literature Review](https://scholar.google.com/scholar?hl=id&as_sdt=0%2C5&q=News-Based+Intelligent+Prediction+of+Financial+Markets+Using+Text+Mining+and+Machine+Learning%3A+A+Systematic+Literature+Review&btnG=)
 
 ---
 
