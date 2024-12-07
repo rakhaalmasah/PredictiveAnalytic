@@ -38,7 +38,7 @@ Prediksi indeks saham dengan machine learning menawarkan potensi besar dalam mem
 
 ---
 
-## Data Preparation and Understanding
+## Data Understanding
 
 ### 1. Gathering Data
 
