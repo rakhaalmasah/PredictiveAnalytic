@@ -379,9 +379,9 @@ $$
 $$
 
 Dimana:
-- \( y_i \): Nilai aktual (true values).
-- \( \hat{y}_i \): Nilai prediksi (predicted values).
-- \( n \): Jumlah data.
+- **yᵢ**: Nilai aktual (true values).
+- **ŷᵢ**: Nilai prediksi (predicted values).
+- **n**: Jumlah data.
 
 Nilai **MSE** menggambarkan rata-rata dari kuadrat kesalahan antara nilai prediksi dan nilai aktual. Semakin kecil nilai **MSE**, semakin baik model dalam memprediksi data.
 
