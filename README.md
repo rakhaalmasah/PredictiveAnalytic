@@ -233,31 +233,138 @@ Proses pengumpulan, pembersihan, dan eksplorasi data menghasilkan dataset yang b
 ## Modeling
 
 ### **Algoritma yang Digunakan**
+Berikut adalah algoritma machine learning yang digunakan dalam proyek ini:
+
 1. **Random Forest:** Algoritma ensemble berbasis pohon keputusan yang robust terhadap overfitting.
-2. **AdaBoost:** Memperbaiki kesalahan model sebelumnya secara iteratif.
+2. **AdaBoost:** Algoritma boosting untuk meningkatkan akurasi model iteratif.
 3. **SVR:** Algoritma berbasis Support Vector Machine untuk regresi.
 4. **Gradient Boosting:** Teknik boosting untuk menangkap pola non-linear.
-5. **XGBoost:** Implementasi Gradient Boosting yang dioptimalkan.
-6. **LightGBM:** Model boosting yang efisien untuk dataset besar.
+5. **XGBoost:** Implementasi Gradient Boosting yang lebih cepat dan efisien.
+6. **LightGBM:** Model boosting yang dioptimalkan untuk dataset besar.
 7. **CatBoost:** Model boosting yang menangani data kategori dengan baik.
 8. **ElasticNet:** Kombinasi regularisasi L1 dan L2 untuk regresi linier.
 
+---
+
 ### **Hyperparameter Tuning**
-Setiap model dioptimalkan menggunakan `GridSearchCV`. Parameter seperti `n_estimators`, `learning_rate`, dan `max_depth` diuji untuk menemukan kombinasi terbaik.
+Setiap model dioptimalkan menggunakan `GridSearchCV`. Parameter yang diuji meliputi:
+- `n_estimators` (jumlah pohon/iterasi).
+- `learning_rate` (langkah iterasi).
+- Parameter tambahan spesifik untuk setiap algoritma (seperti `max_depth`, `alpha`, dan `l1_ratio`).
+
+---
 
 ### **Hasil Evaluasi Model**
-| Model             | Train MSE | Test MSE | Best Params                                |
-|--------------------|-----------|----------|-------------------------------------------|
-| Random Forest      | 0.337     | 1.952    | {'max_depth': 20, 'n_estimators': 150}    |
-| XGBoost            | 0.363     | 2.337    | {'learning_rate': 0.2, 'n_estimators': 100}|
-| LightGBM           | 0.832     | 2.113    | {'learning_rate': 0.2, 'n_estimators': 100}|
-| Gradient Boosting  | 2.455     | 4.214    | {'learning_rate': 0.2, 'n_estimators': 100}|
-| CatBoost           | 2.321     | 3.319    | {'iterations': 150, 'learning_rate': 0.2} |
-| AdaBoost           | 32.244    | 35.258   | {'learning_rate': 0.2, 'n_estimators': 100}|
-| SVR                | 30.100    | 31.615   | {'C': 10, 'kernel': 'linear'}             |
-| ElasticNet         | 29.995    | 31.559   | {'alpha': 0.1, 'l1_ratio': 0.5}           |
+| **Model**         | **Train MSE** | **Test MSE** | **Best Params**                                |
+|--------------------|---------------|--------------|-----------------------------------------------|
+| Random Forest      | 0.337         | 1.952        | {'n_estimators': 150, 'max_depth': 20}        |
+| XGBoost            | 0.363         | 2.337        | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| LightGBM           | 0.832         | 2.113        | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| Gradient Boosting  | 2.455         | 4.214        | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| CatBoost           | 2.321         | 3.319        | {'iterations': 150, 'learning_rate': 0.2}     |
+| AdaBoost           | 32.244        | 35.258       | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| SVR                | 30.100        | 31.615       | {'C': 10, 'kernel': 'linear'}                 |
+| ElasticNet         | 29.995        | 31.559       | {'alpha': 0.1, 'l1_ratio': 0.5}               |
 
-- **Model Terbaik:** Random Forest dengan Test MSE terendah (1.952).
+---
+
+### **Penjelasan Parameter Model**
+
+#### **1. Random Forest**
+- **Parameter Dicoba:**
+  - `n_estimators`: [50, 100, 150]
+  - `max_depth`: [10, 20, 30]
+- **Parameter Terpilih:** `n_estimators=150`, `max_depth=20`
+- **Kelebihan:** Mampu menangkap pola data yang kompleks.
+- **Kekurangan:** Komputasi berat untuk dataset besar.
+- **Hasil:** `Test MSE=1.952` (model terbaik).
+
+---
+
+#### **2. AdaBoost**
+- **Parameter Dicoba:**
+  - `n_estimators`: [50, 100, 150]
+  - `learning_rate`: [0.01, 0.1, 0.2]
+- **Parameter Terpilih:** `n_estimators=100`, `learning_rate=0.2`
+- **Kelebihan:** Fokus pada data sulit.
+- **Kekurangan:** Sensitif terhadap outliers.
+- **Hasil:** `Test MSE=35.258` (underfitting).
+
+---
+
+#### **3. SVR**
+- **Parameter Dicoba:**
+  - `C`: [0.1, 1, 10]
+  - `kernel`: ['linear', 'rbf']
+- **Parameter Terpilih:** `C=10`, `kernel=linear`
+- **Kelebihan:** Bagus untuk dataset kecil.
+- **Kekurangan:** Tidak cocok untuk dataset besar.
+- **Hasil:** `Test MSE=31.615` (underfitting).
+
+---
+
+#### **4. Gradient Boosting**
+- **Parameter Dicoba:**
+  - `n_estimators`: [50, 100, 150]
+  - `learning_rate`: [0.01, 0.1, 0.2]
+- **Parameter Terpilih:** `n_estimators=100`, `learning_rate=0.2`
+- **Kelebihan:** Menangkap pola non-linear.
+- **Kekurangan:** Komputasi lambat.
+- **Hasil:** `Test MSE=4.214`.
+
+---
+
+#### **5. XGBoost**
+- **Parameter Dicoba:**
+  - `n_estimators`: [50, 100, 150]
+  - `learning_rate`: [0.01, 0.1, 0.2]
+- **Parameter Terpilih:** `n_estimators=100`, `learning_rate=0.2`
+- **Kelebihan:** Cepat dan efisien.
+- **Kekurangan:** Relatif kompleks.
+- **Hasil:** `Test MSE=2.337`.
+
+---
+
+#### **6. LightGBM**
+- **Parameter Dicoba:**
+  - `n_estimators`: [50, 100, 150]
+  - `learning_rate`: [0.01, 0.1, 0.2]
+- **Parameter Terpilih:** `n_estimators=100`, `learning_rate=0.2`
+- **Kelebihan:** Efisien untuk dataset besar.
+- **Kekurangan:** Sensitif terhadap outliers.
+- **Hasil:** `Test MSE=2.113`.
+
+---
+
+#### **7. CatBoost**
+- **Parameter Dicoba:**
+  - `iterations`: [50, 100, 150]
+  - `learning_rate`: [0.01, 0.1, 0.2]
+- **Parameter Terpilih:** `iterations=150`, `learning_rate=0.2`
+- **Kelebihan:** Menangani data kategori tanpa encoding.
+- **Kekurangan:** Komputasi kompleks.
+- **Hasil:** `Test MSE=3.319`.
+
+---
+
+#### **8. ElasticNet**
+- **Parameter Dicoba:**
+  - `alpha`: [0.1, 0.5, 1.0]
+  - `l1_ratio`: [0.2, 0.5, 0.8]
+- **Parameter Terpilih:** `alpha=0.1`, `l1_ratio=0.5`
+- **Kelebihan:** Stabil untuk dataset dengan multikolinearitas.
+- **Kekurangan:** Tidak cocok untuk hubungan non-linear.
+- **Hasil:** `Test MSE=31.559`.
+
+---
+
+#### **Kesimpulan**
+1. **Model Terbaik: Random Forest**
+   - `Test MSE=1.952`, menangkap pola dengan baik tanpa overfitting.
+2. **Model Alternatif: LightGBM dan XGBoost**
+   - LightGBM (`Test MSE=2.113`) dan XGBoost (`Test MSE=2.337`) juga memiliki performa sangat baik.
+3. **Model Kurang Cocok:**
+   - ElasticNet dan SVR gagal menangkap hubungan non-linear, sementara AdaBoost underfitting pada data kompleks.
 
 ---
 
