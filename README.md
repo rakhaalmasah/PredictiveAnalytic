@@ -152,9 +152,7 @@ Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan un
      - Distribusi paling stabil di antara saham lainnya, terkonsentrasi di sekitar **50 hingga 150**.
    - **Insight Utama**:
      - Stabilitas mencerminkan pendekatan investasi jangka panjang dan strategi pasar yang konservatif.
-
----
-
+  
 ---
 
 #### Multivariate Analysis
