@@ -371,23 +371,47 @@ Setiap model dioptimalkan menggunakan `GridSearchCV`. Parameter yang diuji melip
 ## Evaluation
 
 ### **Metrik Evaluasi**
-Metrik yang digunakan adalah **Mean Squared Error (MSE)**:
+
+Metrik yang digunakan untuk mengevaluasi model adalah **Mean Squared Error (MSE)**. Rumus untuk menghitung MSE diberikan sebagai berikut:
+
 \[
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
 \]
 
-- **MSE pada Random Forest:**
-  - **Train MSE:** 0.337
-  - **Test MSE:** 1.952
+Dimana:
+- \( y_i \): Nilai aktual (true values).
+- \( \hat{y}_i \): Nilai prediksi (predicted values).
+- \( n \): Jumlah data.
+
+Nilai **MSE** menggambarkan rata-rata dari kuadrat kesalahan antara nilai prediksi dan nilai aktual. Semakin kecil nilai **MSE**, semakin baik model dalam memprediksi data.
+
+---
+
+### **Hasil Evaluasi MSE pada Random Forest**
+1. **Train MSE:** 0.337
+2. **Test MSE:** 1.952
+
+Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang mengindikasikan performa prediksi terbaik dibandingkan model lain.
+
+---
 
 ### **Visualisasi Prediksi**
-1. **Prediksi NASDAQ:** Prediksi sangat dekat dengan nilai aktual, menunjukkan performa model yang sangat baik.
-2. **Prediksi SPY:** Model juga memprediksi nilai SPY dengan akurasi tinggi, sebagaimana ditunjukkan oleh scatter plot.
 
+#### **Prediksi NASDAQ (Close_nasdaq):**
+- Prediksi model Random Forest sangat dekat dengan nilai aktual, menunjukkan bahwa model mampu menangkap pola data dengan baik.
+- Model memprediksi nilai NASDAQ tanpa mengalami overfitting pada data latih.
+
+#### **Prediksi SPY (Close_spy):**
+- Model juga menunjukkan performa prediksi yang sangat baik untuk data SPY, sebagaimana terlihat dari scatter plot prediksi vs nilai aktual.
+
+---
 
 ### **Kesimpulan**
-- Model Random Forest berhasil memprediksi NASDAQ dan SPY dengan akurasi tinggi, menjadikannya model terbaik untuk proyek ini.
-- Hyperparameter tuning berkontribusi dalam meningkatkan akurasi model, terutama dibandingkan dengan model baseline.
+1. Model **Random Forest** terbukti menjadi model terbaik untuk memprediksi **Close_nasdaq** dan **Close_spy**, dengan **MSE Test** terendah sebesar **1.952**.
+2. **Hyperparameter Tuning** melalui GridSearchCV berkontribusi dalam meningkatkan akurasi prediksi model.
+3. Visualisasi prediksi memperlihatkan bahwa model mampu menghasilkan prediksi yang sangat mendekati nilai aktual.
+
+---
 
 ---
 
