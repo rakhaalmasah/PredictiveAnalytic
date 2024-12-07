@@ -3,9 +3,11 @@
 ## Domain Proyek
 
 ### **Latar Belakang**
-Pasar saham merupakan salah satu indikator penting dari kesehatan ekonomi suatu negara. Analisis dan prediksi pergerakan indeks saham seperti NASDAQ dan S&P 500 (SPY) dapat membantu investor membuat keputusan yang lebih baik. Namun, dinamika pergerakan saham sangat kompleks karena dipengaruhi oleh banyak faktor, termasuk performa perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway.
+Pasar saham adalah indikator vital kesehatan ekonomi suatu negara. Analisis dan prediksi pergerakan indeks saham, seperti NASDAQ dan S&P 500 (SPY), membantu investor dalam pengambilan keputusan yang lebih baik. Namun, dinamika pergerakan saham sangat kompleks, dipengaruhi oleh berbagai faktor, termasuk kinerja perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway.
 
-Prediksi indeks saham adalah salah satu aplikasi machine learning yang dapat memberikan insight bagi para investor dan analis keuangan untuk memahami pola pasar.
+Penelitian sebelumnya telah mengeksplorasi berbagai pendekatan untuk memprediksi pasar saham. Misalnya, Shah et al. (2021) menggunakan prediksi berbasis berita dengan text mining dan machine learning untuk meningkatkan akurasi prediksi pasar keuangan. Selain itu, Kim et al. (2020) menerapkan algoritma hybrid machine learning untuk mengidentifikasi arah pergerakan harian pasar saham dengan lebih akurat. Lebih lanjut, Huang et al. (2021) membahas aplikasi machine learning dalam peramalan keuangan, perencanaan, dan analisis, sementara Gupta et al. (2023) menganalisis pengaruh kecerdasan buatan dan machine learning terhadap pasar keuangan, termasuk dalam trading, manajemen risiko, dan operasi keuangan.
+
+Prediksi indeks saham dengan machine learning menawarkan potensi besar dalam memberikan wawasan bagi investor dan analis keuangan untuk memahami pola pasar yang kompleks.
 
 ### **Referensi**
 - [News-Based Intelligent Prediction of Financial Markets Using Text Mining and Machine Learning: A Systematic Literature Review](https://scholar.google.com/scholar?hl=id&as_sdt=0%2C5&q=News-Based+Intelligent+Prediction+of+Financial+Markets+Using+Text+Mining+and+Machine+Learning%3A+A+Systematic+Literature+Review&btnG=)
