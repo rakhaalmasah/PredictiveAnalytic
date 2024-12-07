@@ -374,9 +374,9 @@ Setiap model dioptimalkan menggunakan `GridSearchCV`. Parameter yang diuji melip
 
 Metrik yang digunakan untuk mengevaluasi model adalah **Mean Squared Error (MSE)**. Rumus untuk menghitung MSE diberikan sebagai berikut:
 
-\[
+$$
 \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-\]
+$$
 
 Dimana:
 - \( y_i \): Nilai aktual (true values).
