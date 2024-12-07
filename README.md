@@ -461,8 +461,6 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 
 ---
 
----
-
 ### **Kesimpulan**
 1. Model **Random Forest** terbukti menjadi model terbaik untuk memprediksi **Close_nasdaq** dan **Close_spy**, dengan **MSE Test** terendah sebesar **1.952**.
 2. **Hyperparameter Tuning** melalui GridSearchCV berkontribusi dalam meningkatkan akurasi prediksi model.
