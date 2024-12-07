@@ -401,8 +401,19 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 - Prediksi model Random Forest sangat dekat dengan nilai aktual, menunjukkan bahwa model mampu menangkap pola data dengan baik.
 - Model memprediksi nilai NASDAQ tanpa mengalami overfitting pada data latih.
 
+##### Grafik Prediksi NASDAQ:
+![Prediksi NASDAQ](https://github.com/rakhaalmasah/PredictiveAnalytic/blob/b9b35e8e83fe1917f19af83538543f1a611897e3/nasdaq.png)
+
+---
+
 #### **Prediksi SPY (Close_spy):**
 - Model juga menunjukkan performa prediksi yang sangat baik untuk data SPY, sebagaimana terlihat dari scatter plot prediksi vs nilai aktual.
+
+##### Grafik Prediksi SPY:
+![Prediksi SPY](https://github.com/rakhaalmasah/PredictiveAnalytic/blob/b9b35e8e83fe1917f19af83538543f1a611897e3/snp.png)
+
+---
+
 
 ---
 
