@@ -38,24 +38,105 @@ Prediksi indeks saham dengan machine learning menawarkan potensi besar dalam mem
 
 ---
 
-## Data Understanding
+# Data Preparation and Understanding
 
-### **Informasi Dataset**
-Dataset mencakup data historis saham NASDAQ (target), SPY (target), Apple, Microsoft, Amazon, dan Berkshire Hathaway (fitur). Data diperoleh dari [Yahoo Finance](https://finance.yahoo.com/).
+## 1. Gathering Data
 
-**Fitur-fitur yang tersedia:**
-- **Date:** Tanggal data diambil.
-- **Close_nasdaq:** Nilai penutupan NASDAQ (target 1).
-- **Close_spy:** Nilai penutupan S&P 500 ETF (target 2).
-- **Close_aapl:** Nilai penutupan Apple (fitur).
-- **Close_msft:** Nilai penutupan Microsoft (fitur).
-- **Close_amzn:** Nilai penutupan Amazon (fitur).
-- **Close_brkb:** Nilai penutupan Berkshire Hathaway (fitur).
+### Proses Pengumpulan Data
+Data diambil dari [Yahoo Finance](https://finance.yahoo.com/) menggunakan library `yfinance`. Berikut langkah-langkah pengumpulan data:
+1. **Instalasi dan Impor Library**:
+   - Library `yfinance` digunakan untuk mengunduh data historis.
+   - Library lain seperti `numpy`, `pandas`, `matplotlib`, dan `seaborn` digunakan untuk analisis dan visualisasi data.
+2. **Rentang Waktu**:
+   - Data dikumpulkan dari 1 Januari 2001 hingga 1 Desember 2024.
+3. **Target (Variabel Y)**:
+   - `Close_nasdaq`: Harga penutupan NASDAQ Composite.
+   - `Close_spy`: Harga penutupan S&P 500 ETF.
+4. **Fitur (Variabel X)**:
+   - `Close_aapl`: Harga penutupan saham Apple.
+   - `Close_msft`: Harga penutupan saham Microsoft.
+   - `Close_amzn`: Harga penutupan saham Amazon.
+   - `Close_brkb`: Harga penutupan saham Berkshire Hathaway.
+5. **Verifikasi Data**:
+   - Dataset yang diunduh diverifikasi dengan menampilkan beberapa baris pertama untuk memastikan data sesuai.
 
-### **Exploratory Data Analysis**
-- **Univariate Analysis:** Menunjukkan distribusi setiap fitur dan target menggunakan histogram.
-- **Multivariate Analysis:** Korelasi antar fitur dan target menunjukkan hubungan positif yang kuat, dengan NASDAQ sangat berkorelasi dengan SPY (0.99).
-- **Outliers:** Deteksi menggunakan boxplot, dan outliers dihapus untuk meningkatkan kualitas data.
+---
+
+## 2. Cleaning and Processing Data
+
+### Proses Pembersihan Data
+1. **Penilaian Dataset**:
+   - Setiap dataset diperiksa untuk memastikan tidak ada nilai hilang (*missing values*) atau duplikasi.
+   - Dataset memiliki kolom utama: `Date` dan `Close`, di mana `Date` perlu dikonversi ke tipe datetime.
+2. **Deteksi Outliers**:
+   - Menggunakan metode *Interquartile Range (IQR)* untuk mendeteksi nilai ekstrem di luar batas wajar.
+   - Nilai di luar batas bawah dan atas (*lower bound* dan *upper bound*) dihapus untuk meningkatkan kualitas data.
+3. **Penggabungan Dataset**:
+   - Semua dataset digabung berdasarkan kolom `Date` menggunakan *inner join* untuk memastikan keselarasan waktu antar fitur dan target.
+
+### Hasil Pembersihan Data
+Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan untuk analisis prediktif.
+
+---
+
+## 3. Data Understanding
+
+### Informasi Dataset
+- **Jumlah Baris**: 4954
+- **Jumlah Kolom**: 7
+- **Kolom Dataset**:
+  1. **Date**: Tanggal pengambilan data.
+  2. **Close_nasdaq**: Harga penutupan NASDAQ Composite.
+  3. **Close_spy**: Harga penutupan S&P 500 ETF.
+  4. **Close_aapl**: Harga penutupan saham Apple.
+  5. **Close_msft**: Harga penutupan saham Microsoft.
+  6. **Close_amzn**: Harga penutupan saham Amazon.
+  7. **Close_brkb**: Harga penutupan saham Berkshire Hathaway.
+
+**Sumber Data**: [Yahoo Finance](https://finance.yahoo.com/)  
+**Tautan Dataset Gabungan**: [Dataset Ready-to-Use](https://github.com/rakhaalmasah/PredictiveAnalytic/blob/dbf7d3817526368333d68d06785f15868c5e91b2/Dataset/merged_dataset.csv)
+
+---
+
+### Univariate Analysis
+1. **Target (Close_nasdaq dan Close_spy)**:
+   - `Close_nasdaq`: Volatilitas tinggi dengan rata-rata 3664.91, rentang 1114.11 hingga 11880.63, dan distribusi *right-skewed*.
+   - `Close_spy`: Stabil dengan rata-rata 163.64 dan rentang 68.11 hingga 357.46.
+
+2. **Fitur Numerik (Close_aapl, Close_msft, Close_amzn, Close_brkb)**:
+   - `Close_aapl` dan `Close_amzn`: Distribusi *right-skewed* dengan beberapa nilai ekstrem sebagai outliers.
+   - `Close_msft`: Distribusi lebih merata dibandingkan Apple dan Amazon.
+   - `Close_brkb`: Distribusi paling stabil.
+
+---
+
+### Multivariate Analysis
+1. **Korelasi Antar Variabel**:
+   - Semua fitur numerik memiliki hubungan positif sangat kuat dengan target:
+     - Contoh: `Close_aapl` dan `Close_nasdaq` (0.97).
+   - NASDAQ dan SPY memiliki korelasi sangat kuat (0.99), mencerminkan pola pergerakan pasar yang selaras.
+
+2. **Scatterplot dan Pairplot**:
+   - Scatterplot menunjukkan pola linier positif antara fitur dan target.
+   - Pairplot mempertegas hubungan antar variabel dan menunjukkan keberadaan outliers pada beberapa saham teknologi.
+
+---
+
+### Insight dari Data Understanding
+1. **Hubungan antar Variabel**:
+   - Saham teknologi memiliki kontribusi besar terhadap pergerakan NASDAQ.
+   - Saham Berkshire Hathaway lebih stabil, mencerminkan perbedaan sektor industri.
+2. **Distribusi Data**:
+   - NASDAQ dan saham teknologi menunjukkan volatilitas tinggi.
+   - SPY dan Berkshire Hathaway lebih stabil, mencerminkan pasar yang lebih luas.
+3. **Kualitas Data**:
+   - Data telah dibersihkan dari outliers dan tidak memiliki nilai hilang atau duplikasi.
+
+---
+
+## 4. Kesimpulan
+Proses pengumpulan, pembersihan, dan eksplorasi data menghasilkan dataset yang berkualitas dan siap digunakan untuk analisis prediktif. Dataset ini mencerminkan pola volatilitas pasar saham teknologi dan stabilitas sektor lain, memberikan fondasi yang kuat untuk membangun model prediktif.
+
 
 ---
 
