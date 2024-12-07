@@ -99,30 +99,109 @@ Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan un
 ---
 
 #### Univariate Analysis
-1. **Target (Close_nasdaq dan Close_spy)**:
-   - `Close_nasdaq`: Volatilitas tinggi dengan rata-rata 3664.91, rentang 1114.11 hingga 11880.63, dan distribusi *right-skewed*.
-   - `Close_spy`: Stabil dengan rata-rata 163.64 dan rentang 68.11 hingga 357.46.
+##### Variabel Target: `Close_nasdaq` dan `Close_spy`
+1. **Close_nasdaq**:
+   - **Statistik**:
+     - Rata-rata harga penutupan: **3664.91**
+     - Rentang harga: **1114.11 hingga 11880.63**
+     - Distribusi miring ke kanan (*right-skewed*), menunjukkan adanya beberapa harga sangat tinggi dibandingkan dengan mayoritas.
+   - **Insight Utama**:
+     - Sebagian besar harga penutupan berada pada rentang **2000 hingga 4000**.
+     - Harga di atas **5000** mencerminkan puncak kinerja pasar saham teknologi pada periode tertentu.
 
-2. **Fitur Numerik (Close_aapl, Close_msft, Close_amzn, Close_brkb)**:
-   - `Close_aapl` dan `Close_amzn`: Distribusi *right-skewed* dengan beberapa nilai ekstrem sebagai outliers.
-   - `Close_msft`: Distribusi lebih merata dibandingkan Apple dan Amazon.
-   - `Close_brkb`: Distribusi paling stabil.
+2. **Close_spy**:
+   - **Statistik**:
+     - Rata-rata harga penutupan: **163.64**
+     - Rentang harga: **68.11 hingga 357.46**
+     - Distribusi lebih stabil dibandingkan NASDAQ, dengan pola yang mendekati simetris.
+   - **Insight Utama**:
+     - Sebagian besar harga terkonsentrasi pada dua rentang utama: **100 hingga 150** dan **200 hingga 250**, mencerminkan perubahan signifikan dalam kinerja pasar secara keseluruhan.
+     - Stabilitas SPY mencerminkan perannya sebagai indeks pasar yang mencakup berbagai sektor.
+
+---
+
+##### Fitur Numerik: `Close_aapl`, `Close_msft`, `Close_amzn`, `Close_brkb`
+1. **Close_aapl (Apple)**:
+   - **Statistik**:
+     - Rata-rata harga: **18.02**
+     - Rentang harga: **0.23 hingga 114.61**
+     - Distribusi miring ke kanan (*right-skewed*), dengan sebagian besar harga di bawah **20**.
+   - **Insight Utama**:
+     - Lonjakan harga yang tinggi mencerminkan peristiwa penting seperti *stock split* atau inovasi teknologi yang signifikan.
+
+2. **Close_msft (Microsoft)**:
+   - **Statistik**:
+     - Rata-rata harga: **47.44**
+     - Rentang harga: **15.15 hingga 216.54**
+     - Distribusi lebih merata dibandingkan Apple, dengan sebagian besar harga berada pada rentang **25 hingga 50**.
+   - **Insight Utama**:
+     - Stabilitas Microsoft mencerminkan pertumbuhan konsisten dan kehadiran pasar yang kuat.
+
+3. **Close_amzn (Amazon)**:
+   - **Statistik**:
+     - Rata-rata harga: **22.52**
+     - Rentang harga: **0.30 hingga 161.25**
+     - Distribusi sangat miring ke kanan (*right-skewed*), dengan sebagian besar harga di bawah **20**.
+   - **Insight Utama**:
+     - Lonjakan harga mencerminkan perkembangan signifikan dalam inovasi e-commerce dan bisnis.
+
+4. **Close_brkb (Berkshire Hathaway)**:
+   - **Statistik**:
+     - Rata-rata harga: **103.14**
+     - Rentang harga: **40 hingga 230.20**
+     - Distribusi paling stabil di antara saham lainnya, terkonsentrasi di sekitar **50 hingga 150**.
+   - **Insight Utama**:
+     - Stabilitas mencerminkan pendekatan investasi jangka panjang dan strategi pasar yang konservatif.
+
+---
 
 ---
 
 #### Multivariate Analysis
-1. **Korelasi Antar Variabel**:
-   - Semua fitur numerik memiliki hubungan positif sangat kuat dengan target:
-     - Contoh: `Close_aapl` dan `Close_nasdaq` (0.97).
-   - NASDAQ dan SPY memiliki korelasi sangat kuat (0.99), mencerminkan pola pergerakan pasar yang selaras.
+##### Korelasi Antar Variabel
+1. **Korelasi dengan Variabel Target**:
+   - Semua fitur numerik menunjukkan **korelasi positif yang sangat kuat** dengan `Close_nasdaq` dan `Close_spy`:
+     - Contoh: `Close_aapl` memiliki korelasi **0.97** dengan `Close_nasdaq` dan **0.93** dengan `Close_spy`.
+   - **Insight Utama**:
+     - Saham teknologi (Apple, Microsoft, Amazon) memiliki pengaruh besar terhadap indeks NASDAQ.
+     - Berkshire Hathaway menunjukkan hubungan yang lebih kuat dengan S&P 500 dibandingkan NASDAQ.
 
-2. **Scatterplot dan Pairplot**:
-   - Scatterplot menunjukkan pola linier positif antara fitur dan target.
-   - Pairplot mempertegas hubungan antar variabel dan menunjukkan keberadaan outliers pada beberapa saham teknologi.
+2. **Korelasi Antar Fitur Numerik**:
+   - Saham teknologi (Apple, Microsoft, Amazon) memiliki **korelasi yang sangat tinggi** satu sama lain (di atas **0.9**).
+   - Berkshire Hathaway memiliki korelasi yang lebih rendah dengan saham teknologi tetapi tetap positif.
+   - **Insight Utama**:
+     - Korelasi kuat di antara saham teknologi mencerminkan pergerakan yang terkoordinasi akibat tren global atau peristiwa industri.
+
+3. **Korelasi Antara `Close_nasdaq` dan `Close_spy`**:
+   - Korelasi **0.99** menunjukkan bahwa kedua indeks ini bergerak hampir identik.
+   - **Insight Utama**:
+     - Meskipun NASDAQ berfokus pada teknologi, hubungan kuat dengan S&P 500 mencerminkan pengaruh teknologi terhadap pasar secara keseluruhan.
 
 ---
 
-#### Insight dari Data Understanding
+##### Analisis Scatterplot dan Pairplot
+1. **Insight dari Scatterplot**:
+   - Hubungan linier positif yang kuat terlihat antara fitur numerik dan variabel target.
+   - Contoh: `Close_aapl` dan `Close_nasdaq` menunjukkan hubungan linier yang jelas, mengindikasikan pengaruh signifikan Apple terhadap NASDAQ.
+   - **Insight Utama**:
+     - Pola linier menunjukkan bahwa model regresi dapat menangkap hubungan ini dengan baik.
+
+2. **Insight dari Pairplot**:
+   - Pairplot mengonfirmasi pola yang terlihat pada scatterplot, dengan plot KDE pada diagonal menunjukkan:
+     - Distribusi miring ke kanan (*right-skewed*) untuk saham teknologi (Apple, Amazon, Microsoft).
+     - Distribusi lebih simetris untuk Berkshire Hathaway.
+   - **Insight Utama**:
+     - Pairplot membantu mengidentifikasi outlier pada saham teknologi, khususnya Apple dan Amazon.
+
+3. **Outlier**:
+   - Scatterplot dan pairplot mengungkap keberadaan outlier pada saham teknologi (contoh: harga tinggi pada Apple dan Amazon).
+   - **Insight Utama**:
+     - Outlier ini kemungkinan besar terkait dengan peristiwa pasar yang signifikan atau inovasi teknologi.
+
+
+---
+
+###### Insight dari Data Understanding
 1. **Hubungan antar Variabel**:
    - Saham teknologi memiliki kontribusi besar terhadap pergerakan NASDAQ.
    - Saham Berkshire Hathaway lebih stabil, mencerminkan perbedaan sektor industri.
