@@ -414,6 +414,52 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 
 ---
 
+### Evaluasi Dampak Model terhadap Business Understanding
+
+#### **1. Apakah sudah menjawab problem statement?**
+**Ya**, model yang dikembangkan telah berhasil menjawab problem statement yang dirumuskan:
+1. **Problem Statement 1**: 
+   - *"Bagaimana membangun model machine learning untuk memprediksi nilai indeks saham NASDAQ dan SPY berdasarkan data historis perusahaan besar?"*
+   - **Jawaban:** Model **Random Forest** berhasil memprediksi nilai indeks **NASDAQ** dan **SPY** dengan akurasi tinggi. Data historis saham perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway memberikan kontribusi besar terhadap prediksi ini.
+
+2. **Problem Statement 2**: 
+   - *"Algoritma machine learning apa yang memberikan prediksi paling akurat?"*
+   - **Jawaban:** Berdasarkan evaluasi metrik **Mean Squared Error (MSE)**, **Random Forest** adalah algoritma terbaik dengan Test MSE terendah (1.952), diikuti oleh **LightGBM** (2.113) dan **XGBoost** (2.337).
+
+3. **Problem Statement 3**: 
+   - *"Bagaimana cara meningkatkan akurasi prediksi melalui teknik hyperparameter tuning?"*
+   - **Jawaban:** Hyperparameter tuning menggunakan GridSearchCV menghasilkan parameter optimal untuk model Random Forest (`max_depth: 20, n_estimators: 150`), meningkatkan performa model tanpa overfitting.
+
+---
+
+#### **2. Apakah berhasil mencapai goals yang diharapkan?**
+**Ya**, semua goals tercapai:
+1. **Goal 1:** Mengembangkan model machine learning untuk memprediksi NASDAQ dan SPY berdasarkan data saham perusahaan besar.
+   - Model berhasil dibangun dan menghasilkan prediksi yang sangat akurat untuk **Close_nasdaq** dan **Close_spy**.
+
+2. **Goal 2:** Membandingkan performa algoritma seperti Random Forest, XGBoost, dan LightGBM.
+   - Evaluasi menunjukkan bahwa **Random Forest** adalah model terbaik, diikuti oleh **LightGBM** dan **XGBoost**.
+
+3. **Goal 3:** Melakukan hyperparameter tuning untuk meningkatkan akurasi model.
+   - Hyperparameter tuning berhasil meningkatkan performa model, menjadikan Random Forest model dengan prediksi terbaik.
+
+---
+
+#### **3. Apakah solusi statement yang direncanakan berdampak?**
+**Ya**, solusi yang direncanakan memiliki dampak nyata:
+1. **Relevansi dengan Prediksi Pasar Saham:**
+   - Solusi berbasis machine learning menyediakan alat prediktif andal yang dapat digunakan investor untuk memahami tren pasar saham, khususnya NASDAQ dan SPY.
+
+2. **Akurasi Tinggi:** 
+   - Model **Random Forest** menghasilkan prediksi yang sangat akurat, sehingga meningkatkan kepercayaan investor dalam menggunakan model ini untuk strategi perdagangan saham.
+
+3. **Dampak terhadap Investasi:**
+   - Model ini memberikan wawasan tentang tren pasar yang didorong oleh sektor teknologi, sehingga membantu investor mengidentifikasi peluang investasi dengan lebih baik.
+
+4. **Pengambilan Keputusan yang Lebih Informed:**
+   - Solusi ini memungkinkan keputusan investasi berbasis data (*data-driven decision-making*), mengurangi ketidakpastian, dan meningkatkan akurasi strategi investasi.
+
+---
 
 ---
 
@@ -421,8 +467,6 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 1. Model **Random Forest** terbukti menjadi model terbaik untuk memprediksi **Close_nasdaq** dan **Close_spy**, dengan **MSE Test** terendah sebesar **1.952**.
 2. **Hyperparameter Tuning** melalui GridSearchCV berkontribusi dalam meningkatkan akurasi prediksi model.
 3. Visualisasi prediksi memperlihatkan bahwa model mampu menghasilkan prediksi yang sangat mendekati nilai aktual.
-
----
 
 ---
 
