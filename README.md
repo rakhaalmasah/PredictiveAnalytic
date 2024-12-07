@@ -38,11 +38,11 @@ Prediksi indeks saham dengan machine learning menawarkan potensi besar dalam mem
 
 ---
 
-# Data Preparation and Understanding
+## Data Preparation and Understanding
 
-## 1. Gathering Data
+### 1. Gathering Data
 
-### Proses Pengumpulan Data
+#### Proses Pengumpulan Data
 Data diambil dari [Yahoo Finance](https://finance.yahoo.com/) menggunakan library `yfinance`. Berikut langkah-langkah pengumpulan data:
 1. **Instalasi dan Impor Library**:
    - Library `yfinance` digunakan untuk mengunduh data historis.
@@ -62,9 +62,9 @@ Data diambil dari [Yahoo Finance](https://finance.yahoo.com/) menggunakan librar
 
 ---
 
-## 2. Cleaning and Processing Data
+### 2. Cleaning and Processing Data
 
-### Proses Pembersihan Data
+#### Proses Pembersihan Data
 1. **Penilaian Dataset**:
    - Setiap dataset diperiksa untuk memastikan tidak ada nilai hilang (*missing values*) atau duplikasi.
    - Dataset memiliki kolom utama: `Date` dan `Close`, di mana `Date` perlu dikonversi ke tipe datetime.
@@ -74,14 +74,14 @@ Data diambil dari [Yahoo Finance](https://finance.yahoo.com/) menggunakan librar
 3. **Penggabungan Dataset**:
    - Semua dataset digabung berdasarkan kolom `Date` menggunakan *inner join* untuk memastikan keselarasan waktu antar fitur dan target.
 
-### Hasil Pembersihan Data
+#### Hasil Pembersihan Data
 Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan untuk analisis prediktif.
 
 ---
 
-## 3. Data Understanding
+### 3. Data Understanding
 
-### Informasi Dataset
+#### Informasi Dataset
 - **Jumlah Baris**: 4954
 - **Jumlah Kolom**: 7
 - **Kolom Dataset**:
@@ -98,7 +98,7 @@ Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan un
 
 ---
 
-### Univariate Analysis
+#### Univariate Analysis
 1. **Target (Close_nasdaq dan Close_spy)**:
    - `Close_nasdaq`: Volatilitas tinggi dengan rata-rata 3664.91, rentang 1114.11 hingga 11880.63, dan distribusi *right-skewed*.
    - `Close_spy`: Stabil dengan rata-rata 163.64 dan rentang 68.11 hingga 357.46.
@@ -110,7 +110,7 @@ Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan un
 
 ---
 
-### Multivariate Analysis
+#### Multivariate Analysis
 1. **Korelasi Antar Variabel**:
    - Semua fitur numerik memiliki hubungan positif sangat kuat dengan target:
      - Contoh: `Close_aapl` dan `Close_nasdaq` (0.97).
@@ -122,7 +122,7 @@ Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan un
 
 ---
 
-### Insight dari Data Understanding
+#### Insight dari Data Understanding
 1. **Hubungan antar Variabel**:
    - Saham teknologi memiliki kontribusi besar terhadap pergerakan NASDAQ.
    - Saham Berkshire Hathaway lebih stabil, mencerminkan perbedaan sektor industri.
@@ -134,7 +134,7 @@ Dataset hasil penggabungan berisi 4954 baris dan 7 kolom, yang siap digunakan un
 
 ---
 
-## 4. Kesimpulan
+### 4. Kesimpulan
 Proses pengumpulan, pembersihan, dan eksplorasi data menghasilkan dataset yang berkualitas dan siap digunakan untuk analisis prediktif. Dataset ini mencerminkan pola volatilitas pasar saham teknologi dan stabilitas sektor lain, memberikan fondasi yang kuat untuk membangun model prediktif.
 
 
