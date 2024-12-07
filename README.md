@@ -277,6 +277,7 @@ Metrik yang digunakan adalah **Mean Squared Error (MSE)**:
 1. **Prediksi NASDAQ:** Prediksi sangat dekat dengan nilai aktual, menunjukkan performa model yang sangat baik.
 2. **Prediksi SPY:** Model juga memprediksi nilai SPY dengan akurasi tinggi, sebagaimana ditunjukkan oleh scatter plot.
 
+
 ### **Kesimpulan**
 - Model Random Forest berhasil memprediksi NASDAQ dan SPY dengan akurasi tinggi, menjadikannya model terbaik untuk proyek ini.
 - Hyperparameter tuning berkontribusi dalam meningkatkan akurasi model, terutama dibandingkan dengan model baseline.
