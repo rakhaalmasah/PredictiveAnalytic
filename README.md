@@ -252,22 +252,6 @@ Setiap model dioptimalkan menggunakan `GridSearchCV`. Parameter yang diuji melip
 - `learning_rate` (langkah iterasi).
 - Parameter tambahan spesifik untuk setiap algoritma (seperti `max_depth`, `alpha`, dan `l1_ratio`).
 
----
-
-### **Hasil Evaluasi Model**
-| **Model**         | **Train MSE** | **Test MSE** | **Best Params**                                |
-|--------------------|---------------|--------------|-----------------------------------------------|
-| Random Forest      | 0.337         | 1.952        | {'n_estimators': 150, 'max_depth': 20}        |
-| XGBoost            | 0.363         | 2.337        | {'n_estimators': 100, 'learning_rate': 0.2}   |
-| LightGBM           | 0.832         | 2.113        | {'n_estimators': 100, 'learning_rate': 0.2}   |
-| Gradient Boosting  | 2.455         | 4.214        | {'n_estimators': 100, 'learning_rate': 0.2}   |
-| CatBoost           | 2.321         | 3.319        | {'iterations': 150, 'learning_rate': 0.2}     |
-| AdaBoost           | 32.244        | 35.258       | {'n_estimators': 100, 'learning_rate': 0.2}   |
-| SVR                | 30.100        | 31.615       | {'C': 10, 'kernel': 'linear'}                 |
-| ElasticNet         | 29.995        | 31.559       | {'alpha': 0.1, 'l1_ratio': 0.5}               |
-
----
-
 ### **Penjelasan Parameter Model**
 
 #### **1. Random Forest**
@@ -386,6 +370,18 @@ Dimana:
 Nilai **MSE** menggambarkan rata-rata dari kuadrat kesalahan antara nilai prediksi dan nilai aktual. Semakin kecil nilai **MSE**, semakin baik model dalam memprediksi data.
 
 ---
+### **Hasil Evaluasi Model**
+| **Model**         | **Train MSE** | **Test MSE** | **Best Params**                                |
+|--------------------|---------------|--------------|-----------------------------------------------|
+| Random Forest      | 0.337         | 1.952        | {'n_estimators': 150, 'max_depth': 20}        |
+| XGBoost            | 0.363         | 2.337        | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| LightGBM           | 0.832         | 2.113        | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| Gradient Boosting  | 2.455         | 4.214        | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| CatBoost           | 2.321         | 3.319        | {'iterations': 150, 'learning_rate': 0.2}     |
+| AdaBoost           | 32.244        | 35.258       | {'n_estimators': 100, 'learning_rate': 0.2}   |
+| SVR                | 30.100        | 31.615       | {'C': 10, 'kernel': 'linear'}                 |
+| ElasticNet         | 29.995        | 31.559       | {'alpha': 0.1, 'l1_ratio': 0.5}               |
+---
 
 ### **Hasil Evaluasi MSE pada Random Forest**
 1. **Train MSE:** 0.337
@@ -420,7 +416,7 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 **Ya**, model yang dikembangkan telah berhasil menjawab problem statement yang dirumuskan:
 1. **Problem Statement 1**: 
    - *"Bagaimana membangun model machine learning untuk memprediksi nilai indeks saham NASDAQ dan SPY berdasarkan data historis perusahaan besar?"*
-   - **Jawaban:** Model **Random Forest** berhasil memprediksi nilai indeks **NASDAQ** dan **SPY** dengan akurasi tinggi. Data historis saham perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway memberikan kontribusi besar terhadap prediksi ini.
+   - **Jawaban:** Model **Random Forest** berhasil memprediksi nilai indeks **NASDAQ** dan **SPY** dengan akurasi tinggi yang ditandai dengan MSE 1.952. Data historis saham perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway memberikan kontribusi besar terhadap prediksi ini.
 
 2. **Problem Statement 2**: 
    - *"Algoritma machine learning apa yang memberikan prediksi paling akurat?"*
