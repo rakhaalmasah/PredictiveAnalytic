@@ -416,7 +416,7 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 **Ya**, model yang dikembangkan telah berhasil menjawab problem statement yang dirumuskan:
 1. **Problem Statement 1**: 
    - *"Bagaimana membangun model machine learning untuk memprediksi nilai indeks saham NASDAQ dan SPY berdasarkan data historis perusahaan besar?"*
-   - **Jawaban:** Model **Random Forest** berhasil memprediksi nilai indeks **NASDAQ** dan **SPY** dengan akurasi tinggi yang ditandai dengan MSE 1.952. Data historis saham perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway memberikan kontribusi besar terhadap prediksi ini.
+   - **Jawaban:** Model **Random Forest** berhasil memprediksi nilai indeks **NASDAQ** dan **SPY** dengan akurasi tinggi yang ditandai dengan Test MSE rendah yaitu 1.952. Data historis saham perusahaan besar seperti Apple, Microsoft, Amazon, dan Berkshire Hathaway memberikan kontribusi besar terhadap prediksi ini.
 
 2. **Problem Statement 2**: 
    - *"Algoritma machine learning apa yang memberikan prediksi paling akurat?"*
@@ -431,7 +431,7 @@ Model **Random Forest** menunjukkan nilai **MSE** terendah pada data uji, yang m
 #### **2. Apakah berhasil mencapai goals yang diharapkan?**
 **Ya**, semua goals tercapai:
 1. **Goal 1:** Mengembangkan model machine learning untuk memprediksi NASDAQ dan SPY berdasarkan data saham perusahaan besar.
-   - Model berhasil dibangun dan menghasilkan prediksi yang sangat akurat untuk **Close_nasdaq** dan **Close_spy**.
+   - Model berhasil dibangun dan menghasilkan prediksi yang sangat akurat untuk **Close_nasdaq** dan **Close_spy** yang ditandai dengan Test MSE terendah (1.952).
 
 2. **Goal 2:** Membandingkan performa algoritma seperti Random Forest, XGBoost, dan LightGBM.
    - Evaluasi menunjukkan bahwa **Random Forest** adalah model terbaik, diikuti oleh **LightGBM** dan **XGBoost**.
